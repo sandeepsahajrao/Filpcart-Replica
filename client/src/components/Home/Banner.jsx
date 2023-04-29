@@ -48,8 +48,8 @@ export const Banner = () => {
         itemClass='carousel-item-padding-40-px'
       >
         {
-            bannerData.map((data)=>(
-                <img src={data.url} style={{objectFit:"cover",width:'100%',height:280}}></img>
+            bannerData.map((data,index)=>(
+                <img src={data.url} key={index} style={{objectFit:"cover",width:'100%',height:280}}></img>
             ))
         }
       </Carousel>

@@ -1,7 +1,18 @@
 import React from "react";
+import { useState,useEffect } from "react";
 import { Box, InputBase } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import { getdata } from "../servies/AllproductS";
 const Search = () => {
+  const [data, setdata] = useState({});
+  useEffect(() => {
+    const fetchData = async () => {
+      const row = await getdata();
+      setdata(row);
+    };
+    fetchData();
+  }, []);
+  console.log(data)
   return (
     <>
       <Box
